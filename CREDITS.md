@@ -1,7 +1,7 @@
 # Main Software
-**Original Developer**: SkyFuInMC
-**Lead Developer**: EdChdX
-**UI Designer**: EdChdX
+* **Original Developer**: SkyFuInMC
+* **Lead Developer**: EdChdX
+* **UI Designer**: EdChdX
 
 # Libraries
 Please see libs/README.md !
@@ -15,5 +15,4 @@ Please see libs/README.md !
 * Modification: Disallowed
 * Commercial: Disallowed
 #### Files
-* 01.webp (Happy Knowledge Day)
 * 02.webp (Picnic)
