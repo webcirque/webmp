@@ -78,9 +78,36 @@ try {
 } catch (err) {};
 
 // Try async plain script loading
-self.importAsync = self.importAsync || function () {
-	var srcs = arguments;
-	if (Compare.type(String, srcs) == srcs.length) {
-		console.log("Type check passed.");
+self.importAsynd = self.importAsync || function (listOfScripts) {
+	var srcs = Array.from(arguments), doneCount = 0, undoneList = [], successCount = 0, promiseObj;
+	var actionCheck = function (proceed, failSrc) {
+		if (failSrc) {
+			undoneList.push(failSrc);
+		} else {
+			successCount ++;
+		};
+		doneCount ++;
+		if (doneCount == srcs.length) {
+			proceed({"allSuccess": successCount == doneCount, "failed": undoneList});
+		};
 	};
+	if (Compare.type(String, srcs) == srcs.length) {
+		promiseObj = new Promise ((p) => {
+			srcs.forEach(function (e) {
+				var k = document.createElement("script");
+				k.src = e;
+				k.onload = function () {
+					actionCheck(p);
+				};
+				k.onerror = function () {
+					actionCheck(p, this.src);
+				};
+				document.head.appendChild(k);
+			});
+		});
+	} else {
+		throw(new TypeError("only type String is allowed"));
+	};
+	return promiseObj;
 };
+importAsynd.imported = new Set();

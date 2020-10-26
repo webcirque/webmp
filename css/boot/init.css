@@ -1,0 +1,7 @@
+/* Tag-level style announces */
+iframe {
+	border: 0 none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}

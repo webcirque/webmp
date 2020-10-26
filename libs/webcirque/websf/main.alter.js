@@ -126,6 +126,119 @@ Array.prototype.matchAny = function (args) {
 	return ans;
 };
 
+Array.prototype.same = function () {
+	var res = true;
+	this.forEach(function (e, i, a) {
+		if (i < (a.length - 1)) {
+			if (e.constructor != a[i + 1].constructor) {
+				res = false;
+			};
+		};
+	});
+	return res;
+};
+// Get where to insert, or to find
+Array.prototype.point = function (element) {
+	var safeMode = arguments[1];
+	if (safeMode != false) {
+		safeMode = true;
+	};
+	// Initialize blocks
+	var block = 1 << Math.floor(Math.log(this.length - 1) / Math.log(2));
+	// Initialize pointer and continuation
+	var pointer = block, resume = true;
+	if (safeMode) {
+		resume = this.same();
+		if (element.constructor != this[0].constructor) {
+			resume = false;
+		};
+		if (!resume) {
+			pointer = -1;
+		};
+	};
+	console.log("Block size " + block + ", pointer at " + pointer + ".");
+	if (element <= this[0]) {
+		pointer = 0;
+		resume = false;
+	} else if (element > this[this.length - 1]) {
+		pointer = this.length;
+		resume = false;
+	};
+	var lastblock = block;
+	while (resume) {
+		block /= 2;
+		if (block < 1) {
+			resume = false;
+			console.log("Block size too small.");
+		} else {
+			if (this[pointer] > element) {
+				if (this[pointer - 1] >= element) {
+					pointer -= block;
+				};
+			} else if (this[pointer] < element) {
+				pointer += block;
+			};
+		};
+		if (lastblock <= block) {
+			resume = false;
+		};
+		lastblock = block;
+		console.log("Block size " + block + ", pointer at " + pointer + ".");
+		// Finally exits the loop
+	};
+	console.log("Over. Points at " + pointer);
+	return pointer;
+};
+Array.prototype.where = function (element) {
+	var idx = this.point(element);
+	if (this[idx] != element) {
+		idx = -1;
+	};
+	return idx;
+};
+
+// Map!
+/*var Map = self.Map || function (map) {
+	var keys = [];
+	var values = [];
+	this.clear = function () {
+		keys = [];
+		values = [];
+	};
+	this.has = function (key) {
+		return (keys.indexOf(key) != -1);
+	};
+	this.get = function (key) {
+		var res = undefined;
+		if (this.has(key)) {
+			res = values[keys.indexOf(key)];
+		};
+		return res;
+	};
+	this.set = function (key) {
+		//
+	};
+	this.getLegacyArray = function () {
+		var tmpArr = [];
+		keys.forEach(function (e, i) {
+			tmpArr.push([e, values[i]]);
+		});
+		return tmpArr;
+	};
+	if (map) {
+		var beforevalues = [];
+		map.forEach(function (e) {
+			keys.push(e[0]);
+			beforevalues.push(e[1]);
+		});
+		var beforekeys = keys.slice();
+		keys.sort();
+		keys.forEach(function (e) {
+			values.push(beforevalues[beforekeys.indexOf(e)]);
+		});
+	};
+};*/
+
 // Batch type comparison, one array-based, one argument-based
 try {
 	var Compare = function () {
