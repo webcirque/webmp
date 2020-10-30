@@ -1,1 +1,15 @@
-{}
+{
+    "appTitle": {
+        "message": "[${state}${targetName}] WebMP Orquídea",
+        "description": "Default display title of the application."
+    },
+    "player": {
+        "message": "Reproductor"
+    },
+    "open": {
+        "message": "Abra el objetivo"
+    },
+    "conf": {
+        "message": "Ajustes"
+    }
+}
