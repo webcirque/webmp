@@ -48,9 +48,6 @@ Cordova App | - | ✕
 PS: _Running directly as an offline local webpage is no longer supported._
 
 ## Languages expected to support
-**PS: Bolded languages are expected to be put in more effort.**
-_Want to help us translating? We are planning to set up a Weblate or Gitea server! Before finished, just tell developers to get a copy of translation file!_
-
 [![Translation status](http://be.pwcq.dev/widgets/webcirque-webmp/-/c-anad/multi-green.svg)](http://be.pwcq.dev/engage/webcirque-webmp/)
 
 ## Project page
