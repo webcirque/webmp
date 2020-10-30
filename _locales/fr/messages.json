@@ -1,0 +1,13 @@
+{
+    "extName": {
+        "message": "WebMP",
+        "description": "Name of this application."
+    },
+    "extFullName": {
+        "message": "Webcirque Web Lecteur Multimédia",
+        "description": "Full name of this application."
+    },
+    "extDesc": {
+        "message": "C'est peut-être le meilleur lecteur multimédia multiplateforme. Il peut être utilisé n'importe où. Il a été autorisé avec AGPL v3."
+    }
+}
