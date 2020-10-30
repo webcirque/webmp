@@ -5,17 +5,29 @@
 	<script src="../libs/webcirque/websf/main.alter.js"></script>
 	<script src="../libs/webcirque/websf/main.catalyst.js"></script>
 	<script src="../libs/webcirque/websf/main.flyover.js"></script>
+	<link rel="stylesheet" href="../css/global/normalize.css" />
 	<link rel="stylesheet" href="../css/base/base.css" />
 	<style id="style-managed"></style>
 </head>
 <body>
-	<div class="background">
-		<img id="bg-main" src="../img/bg/02.webp"></img>
-		<img id="bg-tween"></img>
+	<div class="se se-max background">
+		<img class="se" id="bg-main" src="../img/bg/02.webp"></img>
+		<img class="se" id="bg-tween"></img>
 	</div>
-	<div class="panel">
-		<div class="tabline horizontal">
-			<div class="tab-unit"></div>
+	<div class="se se-max panel">
+		<div class="tabline">
+			<div class="tab-unit" id="tab-icon-player">
+				<img class="icon-play isize-sm" title="$!base.player" />
+			</div>
+			<div class="tab-unit" id="tab-icon-audioPanel">
+				<img class="icon-play isize-sm" title="$!base.audioPanel" />
+			</div>
+			<div class="tab-unit" id="tab-icon-open">
+				<img class="icon-play isize-sm" title="$!base.open" />
+			</div>
+			<div class="tab-unit" id="tab-icon-conf">
+				<img class="icon-play isize-sm" title="$!base.conf" />
+			</div>
 		</div>
 	</div>
 </body>

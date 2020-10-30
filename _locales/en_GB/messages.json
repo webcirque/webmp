@@ -1,0 +1,13 @@
+{
+    "extName": {
+        "message": "WebMP",
+        "description": "Name of this application."
+    },
+    "extFullName": {
+        "message": "Webcirque Web Media Player",
+        "description": "Full name of this application."
+    },
+    "extDesc": {
+        "message": "Might be the best cross-platform player that can be loaded anywhere. AGPL v3 licensed FOSS."
+    }
+}

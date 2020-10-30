@@ -41,8 +41,7 @@
 	"resources": [
 		{
 			"id": "plus",
-			"src": "feather/plus.svg",
-			"size": "~s"
+			"src": "feather/plus.svg"
 		},
 		{
 			"id": "menu",

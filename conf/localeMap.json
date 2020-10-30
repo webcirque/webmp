@@ -1,0 +1,7 @@
+{
+	"loadFrom": "_locales",
+	"default": "en",
+	"list": {
+		"ext": "messages.json"
+	}
+}

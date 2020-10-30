@@ -9,7 +9,7 @@ If you are not sure how to use this player, you can check the [manual](https://g
 ## Badges
 * ![image](https://www.gnu.org/graphics/agplv3-155x51.png)
 <!--![jsdeals](https://github.com/webcirque/webmp/workflows/jsdeals/badge.svg)-->
-* [![Translation status](http://be.pwcq.dev/widgets/webcirque-webmp/-/c-anad/287x66-black.png)](http://be.pwcq.dev/engage/webcirque-webmp/)
+* [![Translation status](https://be.pwcq.dev/widgets/webcirque-webmp/-/c-anad/287x66-black.png)](https://be.pwcq.dev/engage/webcirque-webmp/)
 
 ## Special Thanks
 * [FOSSHost](https://fosshost.org) for [providing server](https://be.pwcq.dev/) for content delivery and translation.
@@ -48,7 +48,7 @@ Cordova App | - | ✕
 PS: _Running directly as an offline local webpage is no longer supported._
 
 ## Languages expected to support
-[![Translation status](http://be.pwcq.dev/widgets/webcirque-webmp/-/c-anad/multi-green.svg)](http://be.pwcq.dev/engage/webcirque-webmp/)
+[![Translation status](https://be.pwcq.dev/widgets/webcirque-webmp/-/c-anad/multi-green.svg)](https://be.pwcq.dev/engage/webcirque-webmp/)
 
 ## Project page
 
