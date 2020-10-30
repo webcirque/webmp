@@ -77,6 +77,111 @@ try {
 	};
 } catch (err) {};
 
+try {
+	self.DOMTokenList.prototype.on = function (id) {
+		if (!this.contains(id)) {
+			this.add(id);
+		};
+	};
+	self.DOMTokenList.prototype.off = function (id) {
+		if (this.contains(id)) {
+			this.remove(id);
+		};
+	};
+} catch (err) {};
+
+String.prototype.alter = function (map) {
+	let wtAr = Array.from(this);
+	let wlist = [];
+	let wstart = 0;
+	let wname = "";
+	let wmode = 0; //0 for $ searching, 1 for ${ confirm, 2 for ${} name add
+	let wres = "";
+	let alterItem = function (start, name, value) {
+		if (start.constructor == Number) {
+			this.start = start;
+		} else {
+			throw(new TypeError("Value \"start\" must be a Number."));
+		};
+		if (name.constructor == String) {
+			this.name = name;
+		} else {
+			throw(new TypeError("Value \"name\" must be a String."));
+		};
+		if (value.constructor == String) {
+			this.value = Array.from(value);
+		} else if (value.constructor == Number || value.constructor == BigInt) {
+			this.value = Array.from(value.toString());
+		} else {
+			throw(new TypeError("Value \"value\" must not be an explicit object."));
+		};
+	};
+	wtAr.forEach((e, i) => {
+		switch (wmode) {
+			case 0: {
+				if (e == "$") {
+					wmode = 1;
+				};
+				break;
+			};
+			case 1: {
+				if (e == "{") {
+					wstart = i - 1;
+					wmode = 2;
+				} else {
+					wmode = 0;
+				};
+				break;
+			};
+			case 2: {
+				if (e == "}") {
+					wstart ++;
+					wlist.push(new alterItem(wstart, wname, ""));
+					wstart = 0;
+					wname = "";
+					wmode = 0;
+				} else {
+					wname += e;
+				};
+				break;
+			};
+			default: {
+				throw(new Error("Unknown mode $1 encountered at index $2.".replace("$1", wmode))).replace("$2", i);
+			};
+		};
+	});
+	let stOffset = 0;
+	wlist.forEach((e) => {
+		let wstart = e.start;
+		let wname = e.name;
+		wtAr.splice(wstart - 1 - stOffset, wname.length + 3);
+		e.start -= stOffset;
+		stOffset += wname.length + 3;
+	});
+	stOffset = 0;
+	wlist.forEach((e) => {
+		let value = map[e.name];
+		if (map[e.name] == undefined || map[e.name] == null) {
+			e.value = Array.from("ERR_NULL");
+		} else {
+			let value = map[e.name];
+			if (value.constructor == String) {
+				e.value = Array.from(value);
+			} else if (value.constructor == Number || value.constructor == BigInt) {
+				e.value = Array.from(value.toString());
+			} else {
+				throw(new TypeError("Value \"$1\" must not be an explicit object.").replace("$1", e.name));
+			};
+		};
+		wtAr.splice(e.start - 1 + stOffset, 0, ...e.value);
+		stOffset += e.value.length;
+	});
+	wtAr.forEach((e) => {
+		wres += e;
+	});
+	return (wres);
+};
+
 // Try async plain script loading
 self.importAsynd = self.importAsync || function (listOfScripts) {
 	var srcs = Array.from(arguments), doneCount = 0, undoneList = [], successCount = 0, promiseObj;

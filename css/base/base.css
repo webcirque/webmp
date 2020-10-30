@@ -26,13 +26,6 @@ div.panel {
 	background-color: transparent;
 }
 
-.switch-off {
-	display: none;
-}
-.sel-active {
-	background: rgba(255, 255, 255, 0.3);
-}
-
 /* Customized tab bar position */
 .tabline {
 	display: flex;
@@ -44,6 +37,14 @@ div.panel {
 	border-radius: 4px;
 	text-align: center;
 	vertical-align: middle;
+	background: rgba(0, 0, 0, 0);
+	transition: background 0.1s;
+}
+.tab-unit:hover {
+	background: rgba(255, 255, 255, 0.15);
+}
+.tab-unit:active {
+	background: rgba(255, 255, 255, 0.4) !important;
 }
 .tabline, .tabline > div {
 	height: 100%;
@@ -93,6 +94,13 @@ div.panel {
 
 img[class^='icon-'] {
 	filter: brightness(0%) invert(100%);
+}
+
+.switch-off {
+	display: none;
+}
+.sel-active {
+	background: rgba(255, 255, 255, 0.3) !important;
 }
 
 /* Device height is less than 560px? */
