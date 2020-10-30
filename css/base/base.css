@@ -1,0 +1,29 @@
+.se {
+	position: absolute;
+}
+
+.se-max {
+	width: 100%;
+	height: 100%;
+}
+
+img[id^='bg'] {
+	max-width: 100%;
+	max-height: 100%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+img#bg-tween {
+	opacity: 0;
+}
+
+.clicktrap {
+
+}
+
+::selection {
+	background-color: transparent;
+}
+
+/* Customized tab bar position */

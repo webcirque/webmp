@@ -1,0 +1,9 @@
+en
+en_GB
+es
+fa
+fr
+ja
+zh_CN
+zh_HK
+zh_TW

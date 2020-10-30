@@ -27,7 +27,7 @@
 		"webRequestBlocking"
 	],
 	"incognito": "split",
-	"page_action": {
+	"browser_action": {
 		"default_title": "__MSG_extName__",
 		"default_popup": "web/popup.htm"
 	}
