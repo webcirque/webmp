@@ -1,0 +1,42 @@
+{
+	"short_name": "__MSG_extName__",
+	"name": "__MSG_extFullName__",
+	"description": "__MSG_extDesc__",
+	"manifest_version": 2,
+	"default_locale": "en",
+	"version": "0.30.0.0",
+	"version_name": "0.30 Orchid (蘭)",
+	"homepage_url": "https://www.pwcq.dev/projects/webmp/",
+	"permissions": [
+		"*://*/*",
+		"activeTab",
+		"tabs",
+		"background",
+		"clipboardRead",
+		"clipboardWrite",
+		"cookies",
+		"dns",
+		"downloads",
+		"geolocation",
+		"notifications",
+		"pageCapture",
+		"storage",
+		"unlimitedStorage",
+		"webRequest",
+		"webRequestBlocking"
+	],
+	"icons": {
+		"16": "img/appicon/16.webp",
+		"24": "img/appicon/24.webp",
+		"32": "img/appicon/32.webp",
+		"48": "img/appicon/48.webp",
+		"64": "img/appicon/64.webp",
+		"96": "img/appicon/96.webp",
+		"128": "img/appicon/128.webp"
+	},
+	"incognito": "split",
+	"page_action": {
+		"default_title": "__MSG_extName__",
+		"default_popup": "web/popup.htm"
+	}
+}

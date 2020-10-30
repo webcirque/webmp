@@ -11,8 +11,8 @@ If you are not sure how to use this player, you can check the [manual](https://g
 <!--![jsdeals](https://github.com/webcirque/webmp/workflows/jsdeals/badge.svg)-->
 
 ## Special Thanks
-* FOSSHost for providing server for content delivery and translation.
-* Cloudflare for providing content delivery and firewalls.
+* [FOSSHost](https://fosshost.org) for [providing server](https://be.pwcq.dev/) for content delivery and translation.
+* [Cloudflare](https://cloudflare.com) for providing content delivery and firewalls.
 * PeerJS for providing public server to peer clients.
 * **Full credits can be found in a seperate file**
 
