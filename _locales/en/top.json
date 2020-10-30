@@ -1,0 +1,14 @@
+{
+	"adjVol": {
+		"message": "Volume: ${volume}%",
+		"description": "Shows when the volume is adjusting."
+	},
+	"adjBrightness": {
+		"message": "Brightness: ${bright}%",
+		"description": "Shows when adjusting brightness level."
+	},
+	"adjProg": {
+		"message": "${current} / ${total}",
+		"description": "Shows when adjusting current progress."
+	}
+}
