@@ -7,8 +7,9 @@ Webcirque Web Media Player for Web platforms. Licensed under GNU AGPL v3 License
 If you are not sure how to use this player, you can check the [manual](https://github.com/webcirque/webmp/wiki).
 
 ## Badges
-![image](https://www.gnu.org/graphics/agplv3-155x51.png)
+* ![image](https://www.gnu.org/graphics/agplv3-155x51.png)
 <!--![jsdeals](https://github.com/webcirque/webmp/workflows/jsdeals/badge.svg)-->
+* [![Translation status](http://be.pwcq.dev/widgets/webcirque-webmp/-/c-anad/287x66-black.png)](http://be.pwcq.dev/engage/webcirque-webmp/)
 
 ## Special Thanks
 * [FOSSHost](https://fosshost.org) for [providing server](https://be.pwcq.dev/) for content delivery and translation.
@@ -50,16 +51,7 @@ PS: _Running directly as an offline local webpage is no longer supported._
 **PS: Bolded languages are expected to be put in more effort.**
 _Want to help us translating? We are planning to set up a Weblate or Gitea server! Before finished, just tell developers to get a copy of translation file!_
 
-Name | Language Code | Native Name | Suppo​rted?
---- | --- | --- | ---
-**English** (United States) | en_US | English (United States) | ✓
-**English** (United Kingdom) | en_GB | English (United Kingdom) | ✕
-**Orthodox Chinese** (Chunghwa Taiwan) | zh_TW | 正體中文（臺灣） | ✕
-Traditional Cantonese (Chunghwa Hongkong) | zh_HK | 繁體中文（香港） | ✕
-**Simplified Chinese** (Mainland China) | zh_CN | 简体中文（大陆） | ✕
-Japanese | ja | 日本語 | ✕
-French | fr | Français | ✕
-Spanish | es | Español | ✕
+[![Translation status](http://be.pwcq.dev/widgets/webcirque-webmp/-/c-anad/multi-green.svg)](http://be.pwcq.dev/engage/webcirque-webmp/)
 
 ## Project page
 
