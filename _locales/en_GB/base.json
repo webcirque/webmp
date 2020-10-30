@@ -1,1 +1,18 @@
-{}
+{
+    "appTitle": {
+        "message": "[${state}${targetName}] WebMP Orchid",
+        "description": "Default display title of the application."
+    },
+    "player": {
+        "message": "Player"
+    },
+    "open": {
+        "message": "Open Target"
+    },
+    "audioPanel": {
+        "message": "Audio Panel"
+    },
+    "conf": {
+        "message": "Preferences"
+    }
+}
