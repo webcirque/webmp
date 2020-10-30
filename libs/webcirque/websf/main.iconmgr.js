@@ -47,7 +47,6 @@ var IconMgr = function (rootDir = "", conf) {
 		return candidate;
 	};
 	// Icons
-	this.defaultSize = {};
 	var iconMap = new Map();
 	this.getIcon = function (name, root = true) {
 		var res = null;
@@ -104,8 +103,6 @@ var IconMgr = function (rootDir = "", conf) {
 			var tgt = this.getIcon(name);
 			Array.from(document.getElementsByClassName("icon-" + name)).forEach(function (e) {
 				e.src = tgt.src;
-				e.style.width = tgt.size.w.toString() + "px";
-				e.style.height = tgt.size.h.toString() + "px";
 				if (self.debugMode) {
 					console.log("Icon [${id}] updated.")
 				};
@@ -120,9 +117,16 @@ var IconMgr = function (rootDir = "", conf) {
 	this.updateIcons = function () {
 		return this.updateIconsA(arguments);
 	};
+	console.log([iconMap, sizeMap]);
 	this.updateIconsAll = function () {
 		iconMap.forEach(function (etmp, i) {
 			upThis.updateIcon(i);
+		});
+		sizeMap.forEach(function (etmp, i) {
+			Array.from(document.querySelectorAll(".isize-" + i)).forEach(function (e) {
+				e.style.width = etmp.w.toString() + "px";
+				e.style.height = etmp.h.toString() + "px";
+			});
 		});
 	};
 	//Initialize
