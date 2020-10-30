@@ -1,0 +1,339 @@
+{
+	"identifier": "webmp@webcirque",
+	"name": "Webcirque Web Media Player",
+	"iconMgr": {
+		"sizes": [
+			{
+				"ref": "us",
+				"size": "16,16"
+			},
+			{
+				"ref": "s",
+				"size": "24,24"
+			},
+			{
+				"ref": "sm",
+				"size": "32,32"
+			},
+			{
+				"ref": "tsm",
+				"size": "48,48"
+			},
+			{
+				"ref": "m",
+				"size": "64,64"
+			},
+			{
+				"ref": "tlm",
+				"size": "96,96"
+			},
+			{
+				"ref": "lm",
+				"size": "128,128"
+			},
+			{
+				"ref": "l",
+				"size": "256,256"
+			}
+		],
+		"default": "32,32"
+	},
+	"resources": [
+		{
+			"id": "activity",
+			"src": "icomoon/activity.svg"
+		},
+		{
+			"id": "acute-down",
+			"src": "icomoon/acute-down.svg"
+		},
+		{
+			"id": "acute-up",
+			"src": "icomoon/acute-up.svg"
+		},
+		{
+			"id": "acute-left",
+			"src": "icomoon/acute-left.svg"
+		},
+		{
+			"id": "acute-right",
+			"src": "icomoon/acute-right.svg"
+		},
+		{
+			"id": "archive",
+			"src": "icomoon/archive.svg"
+		},
+		{
+			"id": "cc-na",
+			"src": "icomoon/cc_na.svg"
+		},
+		{
+			"id": "cc-off",
+			"src": "icomoon/cc_off.svg"
+		},
+		{
+			"id": "cc-on",
+			"src": "icomoon/cc_on.svg"
+		},
+		{
+			"id": "checkedbox",
+			"src": "icomoon/check-square.svg"
+		},
+		{
+			"id": "check",
+			"src": "icomoon/check.svg"
+		},
+		{
+			"id": "circle",
+			"src": "icomoon/circle.svg"
+		},
+		{
+			"id": "close",
+			"src": "icomoon/close.svg"
+		},
+		{
+			"id": "cloud-off",
+			"src": "icomoon/cloud-off.svg"
+		},
+		{
+			"id": "cloud",
+			"src": "icomoon/cloud.svg"
+		},
+		{
+			"id": "disc",
+			"src": "icomoon/disc.svg"
+		},
+		{
+			"id": "edit",
+			"src": "icomoon/edit.svg"
+		},
+		{
+			"id": "equalizer",
+			"src": "icomoon/equalizer.svg"
+		},
+		{
+			"id": "file-add",
+			"src": "icomoon/file-plus.svg"
+		},
+		{
+			"id": "film",
+			"src": "icomoon/film.svg"
+		},
+		{
+			"id": "filter",
+			"src": "icomoon/filter.svg"
+		},
+		{
+			"id": "folder-add",
+			"src": "icomoon/folder-plus.svg"
+		},
+		{
+			"id": "forward",
+			"src": "icomoon/forward.svg"
+		},
+		{
+			"id": "git-commit",
+			"src": "icomoon/git-commit.svg"
+		},
+		{
+			"id": "ear",
+			"src": "icomoon/hearing.svg"
+		},
+		{
+			"id": "info",
+			"src": "icomoon/info.svg"
+		},
+		{
+			"id": "key",
+			"src": "icomoon/key.svg"
+		},
+		{
+			"id": "layout",
+			"src": "icomoon/layout.svg"
+		},
+		{
+			"id": "list",
+			"src": "icomoon/list.svg"
+		},
+		{
+			"id": "lock",
+			"src": "icomoon/lock.svg"
+		},
+		{
+			"id": "max",
+			"src": "icomoon/maximize.svg"
+		},
+		{
+			"id": "max",
+			"src": "icomoon/maximize.svg"
+		},
+		{
+			"id": "mic",
+			"src": "icomoon/mic.svg"
+		},
+		{
+			"id": "mic-off",
+			"src": "icomoon/mic-off.svg"
+		},
+		{
+			"id": "min",
+			"src": "icomoon/minimize.svg"
+		},
+		{
+			"id": "minus-circle",
+			"src": "icomoon/minus-circle.svg"
+		},
+		{
+			"id": "moon",
+			"src": "icomoon/moon.svg"
+		},
+		{
+			"id": "more-hori",
+			"src": "icomoon/more-hori.svg"
+		},
+		{
+			"id": "more-vert",
+			"src": "icomoon/more-vert.svg"
+		},
+		{
+			"id": "music",
+			"src": "icomoon/music.svg"
+		},
+		{
+			"id": "pause-circle",
+			"src": "icomoon/maximize.svg"
+		},
+		{
+			"id": "pause",
+			"src": "icomoon/pause.svg"
+		},
+		{
+			"id": "play",
+			"src": "icomoon/play.svg"
+		},
+		{
+			"id": "play-circle",
+			"src": "icomoon/play-circle.svg"
+		},
+		{
+			"id": "plus-circle",
+			"src": "icomoon/plus-circle.svg"
+		},
+		{
+			"id": "plus",
+			"src": "icomoon/plus.svg"
+		},
+		{
+			"id": "radio",
+			"src": "icomoon/radio.svg"
+		},
+		{
+			"id": "reload",
+			"src": "icomoon/refresh.svg"
+		},
+		{
+			"id": "repeat-sing",
+			"src": "icomoon/maximize.svg"
+		},
+		{
+			"id": "repeat",
+			"src": "icomoon/repeat.svg"
+		},
+		{
+			"id": "rewind",
+			"src": "icomoon/rewind.svg"
+		},
+		{
+			"id": "screen",
+			"src": "icomoon/screen.svg"
+		},
+		{
+			"id": "settings",
+			"src": "icomoon/settings.svg"
+		},
+		{
+			"id": "share",
+			"src": "icomoon/share-2.svg"
+		},
+		{
+			"id": "shield-off",
+			"src": "icomoon/shield-off.svg"
+		},
+		{
+			"id": "shield",
+			"src": "icomoon/shield.svg"
+		},
+		{
+			"id": "shuffle",
+			"src": "icomoon/shuffle.svg"
+		},
+		{
+			"id": "skip-next",
+			"src": "icomoon/skip-next.svg"
+		},
+		{
+			"id": "skip-prev",
+			"src": "icomoon/skip-prev.svg"
+		},
+		{
+			"id": "stop",
+			"src": "icomoon/square.svg"
+		},
+		{
+			"id": "sun",
+			"src": "icomoon/sun.svg"
+		},
+		{
+			"id": "trash",
+			"src": "icomoon/trash.svg"
+		},
+		{
+			"id": "trash-2",
+			"src": "icomoon/trash-2.svg"
+		},
+		{
+			"id": "upload",
+			"src": "icomoon/upload.svg"
+		},
+		{
+			"id": "video",
+			"src": "icomoon/video.svg"
+		},
+		{
+			"id": "video-off",
+			"src": "icomoon/video-off.svg"
+		},
+		{
+			"id": "vol-down",
+			"src": "icomoon/volume-decrease.svg"
+		},
+		{
+			"id": "vol-up",
+			"src": "icomoon/volume-increase.svg"
+		},
+		{
+			"id": "vol-muted",
+			"src": "icomoon/volume-muted.svg"
+		},
+		{
+			"id": "vol-l0",
+			"src": "icomoon/volume-mute.svg"
+		},
+		{
+			"id": "vol-l1",
+			"src": "icomoon/volume-low.svg"
+		},
+		{
+			"id": "vol-l2",
+			"src": "icomoon/volume-medium.svg"
+		},
+		{
+			"id": "vol-l3",
+			"src": "icomoon/volume-high.svg"
+		},
+		{
+			"id": "wind",
+			"src": "icomoon/wind.svg"
+		}
+	]
+}

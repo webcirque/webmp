@@ -8,8 +8,8 @@
 }
 
 img[id^='bg'] {
-	max-width: 100%;
-	max-height: 100%;
+	width: 100%;
+	height: 100%;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
@@ -18,12 +18,110 @@ img#bg-tween {
 	opacity: 0;
 }
 
-.clicktrap {
-
+div.panel {
+	background: rgba(0, 0, 0, 0);
 }
 
 ::selection {
 	background-color: transparent;
 }
 
+.switch-off {
+	display: none;
+}
+.sel-active {
+	background: rgba(255, 255, 255, 0.3);
+}
+
 /* Customized tab bar position */
+.tabline {
+	display: flex;
+	background: rgba(0, 0, 0, 0.3);
+}
+.tabline > div {
+	margin: 4px;
+	border: 0px solid;
+	border-radius: 4px;
+	text-align: center;
+	vertical-align: middle;
+}
+.tabline, .tabline > div {
+	height: 100%;
+	width: 100%;
+}
+.tabline-left, .tabline-right {
+	width: 44px;
+	flex-direction: column;
+}
+.tabline img.qsz-sm {
+	width: 32px;
+	height: 32px;
+}
+.tabline-left > div, .tabline-right > div {
+	width: 36px;
+}
+.tabline-left > div > img, .tabline-right > div > img {
+	position: relative;
+	top: 50%;
+	transform: translate(0%, -50%);
+}
+.tabline-top, .tabline-bottom {
+	height: 44px;
+	flex-direction: row;
+}
+.tabline-top > div, .tabline-bottom > div {
+	height: 36px;
+	line-height: 36px;
+}
+.tabline-top > div > img, .tabline-bottom > div > img {
+	position: relative;
+	top: 50%;
+	transform: translate(0%, -50%);
+}
+.tabline-left {
+	left: 0;
+}
+.tabline-right {
+	right: 0;
+}
+.tabline-top {
+	top: 0;
+}
+.tabline-bottom {
+	bottom: 0;
+}
+
+img[class^='icon-'] {
+	filter: brightness(0%) invert(100%);
+}
+
+/* Device height is less than 560px? */
+@media (max-height: 600px) {
+	.tabline-top, .tabline-bottom {
+		height: 36px;
+	}
+	.tabline-top > div, .tabline-bottom > div {
+		margin: 2px;
+		border-radius: 4px;
+		height: 32px !important;
+	}
+	.tabline-top img.qsz-sm, .tabline-bottom img.qsz-sm {
+		width: 24px;
+		height: 24px;
+	}
+}
+@media (max-width: 600px) {
+	.tabline-left, .tabline-right {
+		width: 36px;
+	}
+	.tabline-left > div, .tabline-right > div {
+		margin: 2px;
+		border-radius: 4px;
+		width: 32px !important;
+		line-height: 32px;
+	}
+	.tabline-left img.qsz-sm, .tabline-right img.qsz-sm {
+		width: 24px;
+		height: 24px;
+	}
+}
