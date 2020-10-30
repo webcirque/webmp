@@ -1,1 +1,13 @@
-{}
+{
+    "extName": {
+        "message": "WebMP",
+        "description": "Name of this application."
+    },
+    "extFullName": {
+        "message": "Reproductor de medios web",
+        "description": "Full name of this application."
+    },
+    "extDesc": {
+        "message": "Es quizás el mejor reproductor multiplataforma que se puede utilizar en cualquier lugar. Fue licenciado con AGPL v3."
+    }
+}
