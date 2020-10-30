@@ -14,5 +14,9 @@
 	},
 	"conf": {
 		"message": "Settings"
+	},
+	"library": {
+		"message": "Media Library",
+		"description": "Where users can access play queue, playlists, local and online media library."
 	}
 }

@@ -5,6 +5,10 @@
 	<script src="../libs/webcirque/websf/main.alter.js"></script>
 	<script src="../libs/webcirque/websf/main.catalyst.js"></script>
 	<script src="../libs/webcirque/websf/main.flyover.js"></script>
+	<script src="../libs/webcirque/websf/main.i18n.js"></script>
+	<script src="../libs/webcirque/websf/main.iconmgr.js"></script>
+	<script src="../js/global/icons.js"></script>
+	<script src="../js/base/base.js"></script>
 	<link rel="stylesheet" href="../css/global/normalize.css" />
 	<link rel="stylesheet" href="../css/base/base.css" />
 	<style id="style-managed"></style>
@@ -15,18 +19,24 @@
 		<img class="se" id="bg-tween"></img>
 	</div>
 	<div class="se se-max panel">
-		<div class="tabline">
-			<div class="tab-unit" id="tab-icon-player">
-				<img class="icon-play isize-sm" title="$!base.player" />
+		<div class="tabline se tabline-left">
+			<div class="tab-unit i18n-title sel-active" id="tab-icon-player" title="$!base.player">
+				<img class="icon-play qsz-sm switch-player"/>
+				<img class="icon-film qsz-sm switch-player switch-off"/>
+				<img class="icon-music qsz-sm switch-player switch-off"/>
+				<img class="icon-pause qsz-sm switch-player switch-off"/>
 			</div>
 			<div class="tab-unit" id="tab-icon-audioPanel">
-				<img class="icon-play isize-sm" title="$!base.audioPanel" />
+				<img class="icon-equalizer qsz-sm i18n-title" title="$!base.audioPanel" />
+			</div>
+			<div class="tab-unit" id="tab-icon-library">
+				<img class="icon-list qsz-sm i18n-title" title="$!base.library" />
 			</div>
 			<div class="tab-unit" id="tab-icon-open">
-				<img class="icon-play isize-sm" title="$!base.open" />
+				<img class="icon-folder-add qsz-sm i18n-title" title="$!base.open" />
 			</div>
 			<div class="tab-unit" id="tab-icon-conf">
-				<img class="icon-play isize-sm" title="$!base.conf" />
+				<img class="icon-settings qsz-sm i18n-title" title="$!base.conf" />
 			</div>
 		</div>
 	</div>
