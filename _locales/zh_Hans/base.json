@@ -1,1 +1,18 @@
-{}
+{
+    "appTitle": {
+        "message": "[${state}${targetName}] WebMP 白兰",
+        "description": "Default display title of the application."
+    },
+    "player": {
+        "message": "播放器"
+    },
+    "open": {
+        "message": "打开目标"
+    },
+    "audioPanel": {
+        "message": "混音板"
+    },
+    "conf": {
+        "message": "设置"
+    }
+}
