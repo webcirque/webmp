@@ -14,5 +14,9 @@
     },
     "conf": {
         "message": "设置"
+    },
+    "library": {
+        "message": "媒体库",
+        "description": "Where users can access play queue, playlists, local and online media library."
     }
 }
