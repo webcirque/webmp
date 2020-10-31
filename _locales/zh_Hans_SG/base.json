@@ -1,1 +1,6 @@
-{}
+{
+    "appTitle": {
+        "message": "[${state}${targetName}] WebMP 白兰",
+        "description": "Default display title of the application."
+    }
+}
