@@ -1,1 +1,10 @@
-{}
+{
+    "extName": {
+        "message": "WebMP",
+        "description": "Name of this application."
+    },
+    "extFullName": {
+        "message": "Webcirque Web 媒体播放器",
+        "description": "Full name of this application."
+    }
+}
