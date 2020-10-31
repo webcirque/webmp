@@ -6,5 +6,8 @@
     "extFullName": {
         "message": "Webcirque Web 媒体播放器",
         "description": "Full name of this application."
+    },
+    "extDesc": {
+        "message": "可能是最好的跨平台播放器：无论何处，即点即用。是由AGPL v3授权的自由开源软件。"
     }
 }
