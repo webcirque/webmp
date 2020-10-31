@@ -1,1 +1,10 @@
-{}
+{
+    "extName": {
+        "message": "WebMP",
+        "description": "Name of this application."
+    },
+    "extFullName": {
+        "message": "Вебсэрк Web Медиа-плейер",
+        "description": "Full name of this application."
+    }
+}
