@@ -2,5 +2,12 @@
     "extName": {
         "message": "WebMP",
         "description": "Name of this application."
+    },
+    "extFullName": {
+        "message": "Webcirque Web Media Player",
+        "description": "Full name of this application."
+    },
+    "extDesc": {
+        "message": "クロスプラットフォームでは最高のプレイヤーかもしれないし、どこでも利用できる。このFOSSはAGPLv3によりライセンスされています。"
     }
 }
