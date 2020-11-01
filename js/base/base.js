@@ -112,6 +112,7 @@ document.addEventListener("readystatechange", function () {
 				e.ondragenter = disableEvent;
 				e.ondragleave = disableEvent;
 			});
+			// Special actions
 			break;
 		};
 		case "complete": {

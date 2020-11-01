@@ -31,7 +31,8 @@
 				<img class="icon-pause qsz-sm switch-player switch-off"/>
 			</div>
 			<div class="tab-unit i18n-title" id="tab-icon-audioPanel" title="${base.audioPanel}">
-				<img class="icon-equalizer qsz-sm" />
+				<img class="icon-slider qsz-sm switch-mixer" />
+				<img class="icon-image qsz-sm switch-mixer switch-off" />
 			</div>
 			<div class="tab-unit i18n-title" id="tab-icon-library" title="${base.library}">
 				<img class="icon-list qsz-sm" />
@@ -44,12 +45,14 @@
 			</div>
 		</div>
 		<div class="tab-container se-max">
-			<div class="tab se se-max"></div>
+			<div class="tab se se-max">
+				<iframe class="se-max" loading="eager" id="t-core" src="core.htm"></iframe>
+			</div>
 			<div class="tab-slider se se-max">
-				<iframe class="se-max" id="t-audio" src="audio.htm"></iframe>
+				<iframe class="se-max" loading="lazy" id="t-audio" src="audio.htm"></iframe>
 				<iframe class="se-max" id="t-list" src="library.htm"></iframe>
-				<iframe class="se-max" id="t-open" src="open.htm"></iframe>
-				<iframe class="se-max" id="t-conf" src="conf.htm"></iframe>
+				<iframe class="se-max" loading="lazy" id="t-open" src="open.htm"></iframe>
+				<iframe class="se-max" loading="lazy" id="t-conf" src="conf.htm"></iframe>
 			</div>
 		</div>
 	</div>

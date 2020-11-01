@@ -108,8 +108,8 @@
 			"src": "icomoon/edit.svg"
 		},
 		{
-			"id": "equalizer",
-			"src": "icomoon/equalizer.svg"
+			"id": "slider",
+			"src": "icomoon/sliders.svg"
 		},
 		{
 			"id": "file-add",
@@ -334,6 +334,14 @@
 		{
 			"id": "wind",
 			"src": "icomoon/wind.svg"
+		},
+		{
+			"id": "image",
+			"src": "icomoon/image.svg"
+		},
+		{
+			"id": "stat",
+			"src": "icomoon/stat.svg"
 		}
 	]
 }
