@@ -8,6 +8,7 @@
 	"version_name": "0.30 Orchid (蘭)",
 	"options_page": "web/recovery.htm",
 	"homepage_url": "https://www.pwcq.dev/projects/webmp/",
+	"content_security_policy": "script-src 'self' blob: filesystem: unsafe-eval",
 	"permissions": [
 		"*://*/*",
 		"activeTab",
