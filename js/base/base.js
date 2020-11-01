@@ -43,7 +43,7 @@ var actTabSwitch = function (ev) {
 	};
 	state.activeTab = tabNames[state.activeTabId];
 	tabs.slider.style.transform = "translateY(${percent}%)".alter({
-		percent: Math.floor((!!state.activeTabId - 1) * -25)
+		percent: Math.floor((!!state.activeTabId) * -100)
 	});
 	executeTS(state.activeTabId);
 	self.top.postMessage({"type": "switchTab", "value": state.activeTab});

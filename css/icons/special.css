@@ -1,0 +1,12 @@
+img.iclr-black {
+	filter: brightness(0%) !important;
+}
+img.iclr-blue {
+	filter: hue-rotate(-10deg) saturate(200%) !important;
+}
+img.iclr-green {
+	filter: hue-rotate(-120deg) brightness(160%) !important;
+}
+img.iclr-white {
+	filter: brightness(0%) invert(100%) !important;
+}

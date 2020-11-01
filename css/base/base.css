@@ -104,14 +104,10 @@ div.panel {
 	overflow: hidden;
 }
 .tab-slider {
-	height: 400%;
-	transform: translateY(25%);
+	height: 100%;
+	transform: translateY(100%);
 	transition: transform 0.2s;
 	background: rgba(0, 0, 0, 0.16);
-}
-.tab-slider > iframe {
-	height: 25%;
-	margin-bottom: -5px;
 }
 
 /* Device height is less than 560px? */

@@ -8,8 +8,10 @@
 	<script src="../libs/webcirque/websf/main.i18n.js"></script>
 	<script src="../libs/webcirque/websf/main.iconmgr.js"></script>
 	<script src="../js/global/icons.js"></script>
+	<script src="../js/core/core.js"></script>
 	<link rel="stylesheet" href="../css/global/normalize.css" />
 	<link rel="stylesheet" href="../css/core/core.css"/>
+	<link rel="stylesheet" href="../css/icons/special.css"/>
 	<link rel="stylesheet" href="../css/icons/white.css" class="colored-css" id="colored/color"/>
 	<link rel="stylesheet" href="" class="themed-css" id="core/core"/>
 	<style id="style-managed"></style>
@@ -22,10 +24,13 @@
 		</div>
 		<div class="se se-max display-mask display-active">
 			<div class="se se-max" id="area-topbar">
-				<div class="se se-max area-left area-top">
+				<div class="se se-max">
+					<div id="text-media-name">${text.fileName}<br>${text.filename}</div>
+				</div>
+				<div class="se area-left area-top">
 					<div class="button" id="btn-drawer">
-						<img class="icon-acute-right isize-s switch-drawer"></img>
-						<img class="icon-acute-left isize-s switch-drawer switch-off"></img>
+						<img class="icon-acute-right isize-s switch-drawer switch-off"></img>
+						<img class="icon-acute-left isize-s switch-drawer"></img>
 					</div>
 					<div class="button" id="btn-caption">
 						<img class="icon-cc-na isize-s switch-cc"></img>
@@ -33,10 +38,7 @@
 						<img class="icon-cc-on isize-s switch-cc switch-off"></img>
 					</div>
 				</div>
-				<div class="se se-max">
-					<span id="text-media-name">${text.fileName}</span>
-				</div>
-				<div class="se se-max area-right area-top">
+				<div class="se area-right area-top">
 					<div class="button" id="btn-sleeptimer">
 						<img class="icon-shield-off isize-s switch-sleeptimer"></img>
 						<img class="icon-shield isize-s switch-sleeptimer switch-off"></img>
@@ -47,7 +49,15 @@
 					</div>
 				</div>
 			</div>
-			<div class="se se-max" id="area-bottom"></div>
+			<div class="se se-max" id="area-bottom">
+				<canvas id="c-progrender" height="16"></canvas>
+				<input min="0" max="1" step="0.0001" type="range" id="c-progress"/>
+				<div class="se button big-button" id="btn-play">
+					<img class="icon-play ksize-sm switch-play"></img>
+					<img class="icon-pause ksize-sm switch-play switch-off"></img>
+					<img class="icon-more-hori ksize-sm switch-play switch-off"></img>
+				</div>
+			</div>
 		</div>
 	</div>
 </body>
