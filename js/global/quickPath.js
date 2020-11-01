@@ -16,3 +16,9 @@ self["$$"] = self["$$"] || function (selector, source) {
 	var src = source || document;
 	return Array.from(src.querySelectorAll(selector));
 };
+HTMLElement.prototype.$ = function (selector) {
+	return $(selector, this);
+};
+HTMLElement.prototype.$$ = function (selector) {
+	return $$(selector, this);
+};
