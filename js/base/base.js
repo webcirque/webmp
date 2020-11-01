@@ -91,6 +91,10 @@ document.addEventListener("readystatechange", function () {
 				iconMgr.updateIconsAll();
 				self.iconMgr = iconMgr;
 			});
+			// Load override stylesheet for extensions
+			if (self.location.protocol == "chrome-extension:") {
+				styleAsynd("../css/base/or/chromeExt.css");
+			};
 			// Disable auxclick
 			document.body.oncontextmenu = function () {
 				return false;
