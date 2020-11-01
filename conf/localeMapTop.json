@@ -1,0 +1,10 @@
+{
+	"loadFrom": "_locales",
+	"default": "en",
+	"list": "conf/localeList.txt",
+	"components": {
+		"ext": "messages.json",
+		"base": "base.json",
+		"top": "top.json"
+	}
+}
