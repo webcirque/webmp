@@ -1,1 +1,22 @@
-{}
+{
+    "appTitle": {
+        "message": "[${omuluka}${elinya eliluubililwa}] WebMP Orchid",
+        "description": "Default display title of the application."
+    },
+    "player": {
+        "message": "Olutambi oluzannya"
+    },
+    "open": {
+        "message": "Ekiluubililwa ekyabili omu"
+    },
+    "audioPanel": {
+        "message": "Akabondo kookutabula tabula"
+    },
+    "conf": {
+        "message": "Ebyeyambisibwa mu ku tegeka"
+    },
+    "library": {
+        "message": "Ekungaaniro lyebyokuzannyibwa",
+        "description": "Where users can access play queue, playlists, local and online media library."
+    }
+}
