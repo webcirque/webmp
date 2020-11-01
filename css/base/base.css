@@ -7,6 +7,11 @@
 	height: 100%;
 }
 
+iframe {
+	border: none;
+	outline: none;
+}
+
 img[id^='bg'] {
 	width: 100%;
 	height: 100%;
@@ -16,10 +21,23 @@ img[id^='bg'] {
 }
 img#bg-tween {
 	opacity: 0;
+	transition: opacity 0.2s;
 }
 
 div.panel {
-	background: rgba(0, 0, 0, 0);
+	display: flex;
+}
+.panel-left {
+	flex-direction: row;
+}
+.panel-right {
+	flex-direction: row-reverse;
+}
+.panel-top {
+	flex-direction: column;
+}
+.panel-bottom {
+	flex-direction: column-reverse;
 }
 
 ::selection {
@@ -50,7 +68,7 @@ div.panel {
 	height: 100%;
 	width: 100%;
 }
-.tabline-left, .tabline-right {
+.panel-left > .tabline, .panel-right > .tabline {
 	width: 44px;
 	flex-direction: column;
 }
@@ -58,42 +76,38 @@ div.panel {
 	width: 32px;
 	height: 32px;
 }
-.tabline-left > div, .tabline-right > div {
+.panel-left > .tabline > div, .panel-right > .tabline > div {
 	width: 36px;
 }
-.tabline-left > div > img, .tabline-right > div > img {
+.panel-left > .tabline > div > img, .panel-right > .tabline > div > img {
 	position: relative;
 	top: 50%;
 	transform: translate(0%, -50%);
 }
-.tabline-top, .tabline-bottom {
+.panel-top > .tabline, .panel-bottom > .tabline {
 	height: 44px;
 	flex-direction: row;
 }
-.tabline-top > div, .tabline-bottom > div {
+.panel-top > .tabline > div, .panel-bottom > .tabline > div {
 	height: 36px;
 	line-height: 36px;
 }
-.tabline-top > div > img, .tabline-bottom > div > img {
+.panel-top > .tabline > div > img, .panel-bottom > .tabline > div > img {
 	position: relative;
 	top: 50%;
 	transform: translate(0%, -50%);
 }
-.tabline-left {
+.panel-left > .tabline {
 	left: 0;
 }
-.tabline-right {
+.panel-right > .tabline {
 	right: 0;
 }
-.tabline-top {
+.panel-top > .tabline {
 	top: 0;
 }
-.tabline-bottom {
+.panel-bottom > .tabline {
 	bottom: 0;
-}
-
-img[class^='icon-'] {
-	filter: brightness(0%) invert(100%);
 }
 
 .switch-off {
@@ -103,32 +117,46 @@ img[class^='icon-'] {
 	background: rgba(255, 255, 255, 0.3) !important;
 }
 
+.tab-container {
+	background: rgba(0, 0, 0, 0.16);
+	overflow: hidden;
+}
+.tab-slider {
+	height: 400%;
+	transform: translateY(25%);
+	transition: transform 0.2s;
+}
+.tab-slider > iframe {
+	height: 25%;
+	margin-bottom: -5px;
+}
+
 /* Device height is less than 560px? */
 @media (max-height: 600px) {
-	.tabline-top, .tabline-bottom {
+	.panel-top > .tabline, .panel-bottom > .tabline {
 		height: 36px;
 	}
-	.tabline-top > div, .tabline-bottom > div {
+	.panel-top > .tabline > div, .panel-bottom > .tabline > div {
 		margin: 2px;
 		border-radius: 4px;
 		height: 32px !important;
 	}
-	.tabline-top img.qsz-sm, .tabline-bottom img.qsz-sm {
+	.panel-top > .tabline img.qsz-sm, .panel-bottom > .tabline img.qsz-sm {
 		width: 24px;
 		height: 24px;
 	}
 }
 @media (max-width: 600px) {
-	.tabline-left, .tabline-right {
+	.panel-left > .tabline, .panel-right > .tabline {
 		width: 36px;
 	}
-	.tabline-left > div, .tabline-right > div {
+	.panel-left > .tabline > div, .panel-right > .tabline > div {
 		margin: 2px;
 		border-radius: 4px;
 		width: 32px !important;
 		line-height: 32px;
 	}
-	.tabline-left img.qsz-sm, .tabline-right img.qsz-sm {
+	.panel-left > .tabline img.qsz-sm, .panel-right > .tabline img.qsz-sm {
 		width: 24px;
 		height: 24px;
 	}
