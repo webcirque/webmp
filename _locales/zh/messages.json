@@ -1,13 +1,13 @@
 {
-    "extName": {
-        "message": "WebMP",
-        "description": "Name of this application."
-    },
     "extFullName": {
-        "message": "Webcirque Web 媒體播放器",
+        "message": "Webcirque Web 媒体播放器",
         "description": "Full name of this application."
     },
     "extDesc": {
-        "message": "可能是最好的跨平臺媒體播放器。無論何處，皆可使用。是由AGPL v3授權的自由開源軟體。"
+        "message": "可能是最好的跨平台播放器：无论何处，即点即用。是由AGPL v3授权的自由开源软件。"
+    },
+    "extName": {
+        "message": "WebMP",
+        "description": "Name of this application."
     }
 }
