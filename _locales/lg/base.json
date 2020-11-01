@@ -1,6 +1,6 @@
 {
     "appTitle": {
-        "message": "[${omuluka}${elinya eliluubililwa}] WebMP Orchid",
+        "message": "[${state}${targetName}] WebMP Orchid",
         "description": "Default display title of the application."
     },
     "player": {
