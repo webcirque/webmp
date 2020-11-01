@@ -96,15 +96,22 @@ document.addEventListener("readystatechange", function () {
 				styleAsynd("../css/base/or/chromeExt.css");
 			};
 			// Disable auxclick
-			document.body.oncontextmenu = function () {
-				return false;
-			};
+			document.body.oncontextmenu = disableFalse;
 			// Translate!
 			i18nHandler.deployAll();
 			// TabSwitch
 			regTabSwitch();
 			// Post Success
-			self.top.postMessage({"type": "loadProgress", "value": "base"})
+			self.top.postMessage({"type": "loadProgress", "value": "base"});
+			// All images not draggable
+			Array.from(document.querySelectorAll("img")).forEach(function (e) {
+				e.ondrag = disableEvent;
+				e.ondragstart = disableEvent;
+				e.ondragend = disableEvent;
+				e.ondragover = disableEvent;
+				e.ondragenter = disableEvent;
+				e.ondragleave = disableEvent;
+			});
 			break;
 		};
 		case "complete": {
