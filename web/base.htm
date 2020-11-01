@@ -9,8 +9,10 @@
 	<script src="../libs/webcirque/websf/main.iconmgr.js"></script>
 	<script src="../js/global/icons.js"></script>
 	<script src="../js/base/base.js"></script>
+	<script src="../js/base/msg.js" defer></script>
 	<link rel="stylesheet" href="../css/global/normalize.css" />
-	<link rel="stylesheet" href="../css/base/base.css" />
+	<link rel="stylesheet" href="../css/base/base.css" class="themed-css" id="base/base"/>
+	<link rel="stylesheet" href="../css/colored/white.css" class="colored-css" id="colored/color"/>
 	<style id="style-managed"></style>
 </head>
 <body>
@@ -19,24 +21,24 @@
 		<img class="se" id="bg-tween"></img>
 	</div>
 	<div class="se se-max panel">
-		<div class="tabline se tabline-left">
-			<div class="tab-unit i18n-title sel-active" id="tab-icon-player" title="$!base.player">
+		<div class="tabline se tabline-left" id="tabs-tabs">
+			<div class="tab-unit i18n-title sel-active" id="tab-icon-player" title="${base.player}">
 				<img class="icon-play qsz-sm switch-player"/>
 				<img class="icon-film qsz-sm switch-player switch-off"/>
 				<img class="icon-music qsz-sm switch-player switch-off"/>
 				<img class="icon-pause qsz-sm switch-player switch-off"/>
 			</div>
-			<div class="tab-unit" id="tab-icon-audioPanel">
-				<img class="icon-equalizer qsz-sm i18n-title" title="$!base.audioPanel" />
+			<div class="tab-unit i18n-title" id="tab-icon-audioPanel" title="${base.audioPanel}">
+				<img class="icon-equalizer qsz-sm" />
 			</div>
-			<div class="tab-unit" id="tab-icon-library">
-				<img class="icon-list qsz-sm i18n-title" title="$!base.library" />
+			<div class="tab-unit i18n-title" id="tab-icon-library" title="${base.library}">
+				<img class="icon-list qsz-sm" />
 			</div>
-			<div class="tab-unit" id="tab-icon-open">
-				<img class="icon-folder-add qsz-sm i18n-title" title="$!base.open" />
+			<div class="tab-unit i18n-title" id="tab-icon-open" title="${base.open}">
+				<img class="icon-folder-add qsz-sm" />
 			</div>
-			<div class="tab-unit" id="tab-icon-conf">
-				<img class="icon-settings qsz-sm i18n-title" title="$!base.conf" />
+			<div class="tab-unit i18n-title" id="tab-icon-conf" title="${base.conf}">
+				<img class="icon-settings qsz-sm" />
 			</div>
 		</div>
 	</div>

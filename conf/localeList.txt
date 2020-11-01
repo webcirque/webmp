@@ -4,6 +4,6 @@ es
 fa
 fr
 ja
+zh
 zh_CN
 zh_HK
-zh_TW
