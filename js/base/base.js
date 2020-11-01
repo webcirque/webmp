@@ -73,14 +73,14 @@ document.addEventListener("readystatechange", function () {
 		};
 		case "interactive": {
 			// Get the elements
-			bgContainer = document.querySelector(".background");
+			bgContainer = $(".background");
 			bgImgEl = [
-				document.querySelector("#bg-main"),
-				document.querySelector("#bg-tween")
+				$("#bg-main"),
+				$("#bg-tween")
 			];
-			tabs.slider = document.querySelector(".tab-slider");
-			tabs.core = document.querySelector("#t-audio");
-			tabBtns = Array.from(document.querySelectorAll("#tabs-tabs div.tab-unit"));
+			tabs.slider = $(".tab-slider");
+			tabs.core = $("#t-audio");
+			tabBtns = $$("#tabs-tabs div.tab-unit");
 			// Resize async
 			new Promise(function (p, r) {
 				eleResize();
@@ -104,7 +104,7 @@ document.addEventListener("readystatechange", function () {
 			// Post Success
 			self.top.postMessage({"type": "loadProgress", "value": "base"});
 			// All images not draggable
-			Array.from(document.querySelectorAll("img")).forEach(function (e) {
+			$$("img").forEach(function (e) {
 				e.ondrag = disableEvent;
 				e.ondragstart = disableEvent;
 				e.ondragend = disableEvent;
