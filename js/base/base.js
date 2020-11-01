@@ -1,7 +1,7 @@
 "use strict";
 
 // Pre-announce variables
-var bgContainer, bgImgEl, iconMgr, tabBtns, tabFrames, state = {}, config = {};
+var bgContainer, bgImgEl, iconMgr, tabs = {}, tabBtns, tabFrames, state = {}, config = {};
 var tabNames = ["core", "audio", "lib", "open", "conf"];
 
 // Load languages
@@ -21,7 +21,11 @@ var actTabSwitch = function () {
 		e.classList.off("sel-active");
 	});
 	this.classList.on("sel-active");
-	state.activeTab = tabNames[tabBtns.indexOf(this)];
+	state.activeTabId = tabBtns.indexOf(this);
+	state.activeTab = tabNames[state.activeTabId];
+	tabs.slider.style.transform = "translateY(${percent}%)".alter({
+		percent: Math.floor((state.activeTabId - 1) * -25)
+	});
 	self.top.postMessage({"type": "switchTab", "value": state.activeTab});
 };
 var regTabSwitch = function () {
@@ -74,6 +78,8 @@ document.addEventListener("readystatechange", function () {
 				document.querySelector("#bg-main"),
 				document.querySelector("#bg-tween")
 			];
+			tabs.slider = document.querySelector(".tab-slider");
+			tabs.core = document.querySelector("#t-audio");
 			tabBtns = Array.from(document.querySelectorAll("#tabs-tabs div.tab-unit"));
 			// Resize async
 			new Promise(function (p, r) {

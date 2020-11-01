@@ -1,0 +1,3 @@
+img[class^='icon-'] {
+	filter: brightness(0%);
+}
