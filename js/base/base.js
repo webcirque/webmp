@@ -1,7 +1,7 @@
 "use strict";
 
 // Pre-announce variables
-var bgContainer, bgImgEl, iconMgr, tabBtns, tabFrames, state = {}, config = {};
+var bgContainer, bgImgEl, iconMgr, tabs = {}, tabBtns, tabFrames, state = {}, config = {};
 var tabNames = ["core", "audio", "lib", "open", "conf"];
 
 // Load languages
@@ -21,7 +21,11 @@ var actTabSwitch = function () {
 		e.classList.off("sel-active");
 	});
 	this.classList.on("sel-active");
-	state.activeTab = tabNames[tabBtns.indexOf(this)];
+	state.activeTabId = tabBtns.indexOf(this);
+	state.activeTab = tabNames[state.activeTabId];
+	tabs.slider.style.transform = "translateY(${percent}%)".alter({
+		percent: Math.floor((state.activeTabId - 1) * -25)
+	});
 	self.top.postMessage({"type": "switchTab", "value": state.activeTab});
 };
 var regTabSwitch = function () {
@@ -69,12 +73,14 @@ document.addEventListener("readystatechange", function () {
 		};
 		case "interactive": {
 			// Get the elements
-			bgContainer = document.querySelector(".background");
+			bgContainer = $(".background");
 			bgImgEl = [
-				document.querySelector("#bg-main"),
-				document.querySelector("#bg-tween")
+				$("#bg-main"),
+				$("#bg-tween")
 			];
-			tabBtns = Array.from(document.querySelectorAll("#tabs-tabs div.tab-unit"));
+			tabs.slider = $(".tab-slider");
+			tabs.core = $("#t-audio");
+			tabBtns = $$("#tabs-tabs div.tab-unit");
 			// Resize async
 			new Promise(function (p, r) {
 				eleResize();
@@ -85,16 +91,27 @@ document.addEventListener("readystatechange", function () {
 				iconMgr.updateIconsAll();
 				self.iconMgr = iconMgr;
 			});
-			// Disable auxclick
-			document.body.oncontextmenu = function () {
-				return false;
+			// Load override stylesheet for extensions
+			if (self.location.protocol == "chrome-extension:") {
+				styleAsynd("../css/base/or/chromeExt.css");
 			};
+			// Disable auxclick
+			document.body.oncontextmenu = disableFalse;
 			// Translate!
 			i18nHandler.deployAll();
 			// TabSwitch
 			regTabSwitch();
 			// Post Success
-			self.top.postMessage({"type": "loadProgress", "value": "base"})
+			self.top.postMessage({"type": "loadProgress", "value": "base"});
+			// All images not draggable
+			$$("img").forEach(function (e) {
+				e.ondrag = disableEvent;
+				e.ondragstart = disableEvent;
+				e.ondragend = disableEvent;
+				e.ondragover = disableEvent;
+				e.ondragenter = disableEvent;
+				e.ondragleave = disableEvent;
+			});
 			break;
 		};
 		case "complete": {

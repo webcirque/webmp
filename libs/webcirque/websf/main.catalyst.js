@@ -6,6 +6,7 @@ Also, this script will check for features the environment has or doesn't have. R
 Write this script to make it as compatible as possible.
 Thanks to @mumuy on GitHub for mumuy/browser, and @RobW on StackOverflow for his/her amazing answer!
 */
+const MAX_POSSIBLE_VERSION = 90;
 
 // Collects information to help decide the type and version of the environment
 var WEnv = function () {
@@ -75,6 +76,13 @@ var WEnv = function () {
 			this._features.push("a2b");
 		};
 	};
+	// Safe-eval or unsafe-eval?
+	try {
+		eval('');
+		this._features.push("eval");
+	} catch (err) {
+		this._features.push("unsafe-eval");
+	};
 	// SpeechGrammar? (Must not be Safari)
 	if (self.webkitSpeechGrammar) {
 		if (webkitSpeechGrammar.constructor == Function) {
@@ -83,18 +91,30 @@ var WEnv = function () {
 	};
 	// Does let present? (ES6)
 	try {
-		eval('let r1 = "things"');
+		if (this._features.withAlld("eval")) {
+			eval('let r1 = "things"');
+		} else {
+			if (self.Promise.constructor == Function) {};
+		};
 		this._features.push("let");
 	} catch (err) {};
 	// Arrow functions? (ES6)
 	try {
-		eval('var r1 = () => {}');
+		if (this._features.withAlld("eval")) {
+			eval('var r1 = () => {}');
+		} else {
+			if (self.Promise.constructor == Function) {};
+		};
 		this._features.push("arrowFunction");
 	} catch (err) {};
 	// New object accessing measures? (ES6)
 	try {
 		var r1 = {a: 1, b: 2};
-		eval('r1["a"]');
+		if (this._features("eval")) {
+			eval('r1["a"]');
+		} else {
+			if (self.Promise.constructor == Function) {};
+		};
 		this._features.push("objectAccess");
 		for (var name in document) {
 			docEntries.push(name);
@@ -102,7 +122,9 @@ var WEnv = function () {
 	} catch (err) {};
 	// Async functions? (ES2017)
 	try {
-		eval('var r1 = async function () {await new Promise((p) => {p();});}');
+		if (this._features.withAlld("eval")) {
+			eval('var r1 = async function () {await new Promise((p) => {p();});}');
+		};
 		this._features.push("async");
 	} catch (err) {console.log(err.stack)};
 	// If ImageCapture API is present (Chrome 59)
@@ -190,7 +212,7 @@ var WEnv = function () {
 	// BigInt? (Chrome 67, Firefox 68)
 	if (self.BigInt) {
 		try {
-			if (BigInt(1) === eval('1n')) {
+			if (BigInt.constructor == Function) {
 				this._features.push("bigInt");
 			};
 		} catch (err) {};
@@ -278,8 +300,14 @@ var WEnv = function () {
 	// Optional Chaining (Chrome 80, Firefox 74)
 	try {
 		if (this._features.withAlld("a2b")) {
-			if (Compard.able(eval('window?.btoa'))) {
-				this._features.push("optChaining");
+			if (this._features.withAlld("eval")) {
+				if (Compard.able(eval('window?.btoa'))) {
+					this._features.push("optChaining");
+				};
+			} else if (this._features.withAlld("unsafe-eval")) {
+				if (Compard.able(window?.btoa)) {
+					this._features.push("optChaining");
+				};
 			};
 		};
 	} catch (err) {};
@@ -454,7 +482,7 @@ var WEnv = function () {
 		// Browser specific tests
 		if (this.core == "chrome") {
 			//{ If Chromium, check for real versions and versions provided by userAgent
-			var aver = [], dver = [], minver = 0, maxver = 90;
+			var aver = [], dver = [], minver = 0, maxver = MAX_POSSIBLE_VERSION;
 			// Available version check
 			(this._features.withAlld("imageCapture")) ? (aver.push(59)) : (dver.push(59));
 			(this._features.withAlld("restObject")) ? (aver.push(60)) : (dver.push(60));
@@ -513,6 +541,9 @@ var WEnv = function () {
 						};
 					};
 				};
+			};
+			if (maxver < minver) {
+				maxver = MAX_POSSIBLE_VERSION;
 			};
 			console.log("Detected possible version: " + minver + "~" + maxver);
 			if (uadecver) {

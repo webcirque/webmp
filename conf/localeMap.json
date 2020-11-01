@@ -1,5 +1,5 @@
 {
-	"loadFrom": "../_locales/",
+	"loadFrom": "../locales/",
 	"default": "en",
 	"list": "../conf/localeList.txt",
 	"components": {

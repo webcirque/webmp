@@ -182,8 +182,28 @@ String.prototype.alter = function (map) {
 	return (wres);
 };
 
+// Try async style loading
+self.styleAsynd = self.styleAsynd || function (listOfScripts) {
+	var srcs = Array.from(arguments), promiseObj;
+	var actionCheck = function (proceed, failSrc) {
+		proceed();
+	};
+	if (Compare.type(String, srcs) == srcs.length) {
+		promiseObj = new Promise ((p) => {
+			srcs.forEach(function (e) {
+				var k = document.createElement("link");
+				k.rel = "stylesheet";
+				k.href = e;
+				document.head.appendChild(k);
+			});
+		});
+	} else {
+		throw(new TypeError("only type String is allowed"));
+	};
+	return promiseObj;
+};
 // Try async plain script loading
-self.importAsynd = self.importAsync || function (listOfScripts) {
+self.importAsynd = self.importAsynd || function (listOfScripts) {
 	var srcs = Array.from(arguments), doneCount = 0, undoneList = [], successCount = 0, promiseObj;
 	var actionCheck = function (proceed, failSrc) {
 		if (failSrc) {
