@@ -15,5 +15,39 @@
 	<style id="style-managed"></style>
 </head>
 <body>
-	(player core)
+	<div class="se se-max media-container">
+		<div class="se se-max media-io">
+			<video class="se se-max m-io"></video>
+			<audio class="m-io"></audio>
+		</div>
+		<div class="se se-max display-mask display-active">
+			<div class="se se-max" id="area-topbar">
+				<div class="se se-max area-left area-top">
+					<div class="button" id="btn-drawer">
+						<img class="icon-acute-right isize-s switch-drawer"></img>
+						<img class="icon-acute-left isize-s switch-drawer switch-off"></img>
+					</div>
+					<div class="button" id="btn-caption">
+						<img class="icon-cc-na isize-s switch-cc"></img>
+						<img class="icon-cc-off isize-s switch-cc switch-off"></img>
+						<img class="icon-cc-on isize-s switch-cc switch-off"></img>
+					</div>
+				</div>
+				<div class="se se-max">
+					<span id="text-media-name">${text.fileName}</span>
+				</div>
+				<div class="se se-max area-right area-top">
+					<div class="button" id="btn-sleeptimer">
+						<img class="icon-shield-off isize-s switch-sleeptimer"></img>
+						<img class="icon-shield isize-s switch-sleeptimer switch-off"></img>
+					</div>
+					<div class="button" id="btn-dht">
+						<img class="icon-cloud-off isize-s switch-dht"></img>
+						<img class="icon-cloud isize-s switch-dht switch-off"></img>
+					</div>
+				</div>
+			</div>
+			<div class="se se-max" id="area-bottom"></div>
+		</div>
+	</div>
 </body>

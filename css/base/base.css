@@ -1,17 +1,3 @@
-.se {
-	position: absolute;
-}
-
-.se-max {
-	width: 100%;
-	height: 100%;
-}
-
-iframe {
-	border: none;
-	outline: none;
-}
-
 img[id^='bg'] {
 	width: 100%;
 	height: 100%;
@@ -109,10 +95,6 @@ div.panel {
 .panel-bottom > .tabline {
 	bottom: 0;
 }
-
-.switch-off {
-	display: none;
-}
 .sel-active {
 	background: rgba(255, 255, 255, 0.3) !important;
 }
@@ -125,6 +107,7 @@ div.panel {
 	height: 400%;
 	transform: translateY(25%);
 	transition: transform 0.2s;
+	background: rgba(0, 0, 0, 0.16);
 }
 .tab-slider > iframe {
 	height: 25%;

@@ -15,23 +15,51 @@ self.addEventListener("languagechange", function () {
 	});
 });
 
+// Execute tab switch
+var executeTS = function (id) {
+	if (id > 0) {
+		let aTabId = id;
+		tabs.all.forEach(function (e, i) {
+			if (i != aTabId) {
+				tabs.all[i].style.display = "none";
+			} else {
+				tabs.all[i].style.display = "";
+			};
+		});
+	};
+	if (!config.intellihidePlayer) {
+		tabs.all[0].style.display = "";
+	};
+};
 // Switch the tabs
-var actTabSwitch = function () {
+var actTabSwitch = function (ev) {
 	tabBtns.forEach(function (e) {
 		e.classList.off("sel-active");
 	});
 	this.classList.on("sel-active");
 	state.activeTabId = tabBtns.indexOf(this);
+	if (ev.button == 2 && state.activeTabId == 1) {
+		state.activeTabId += 4;
+	};
 	state.activeTab = tabNames[state.activeTabId];
 	tabs.slider.style.transform = "translateY(${percent}%)".alter({
-		percent: Math.floor((state.activeTabId - 1) * -25)
+		percent: Math.floor((!!state.activeTabId - 1) * -25)
 	});
+	executeTS(state.activeTabId);
 	self.top.postMessage({"type": "switchTab", "value": state.activeTab});
 };
 var regTabSwitch = function () {
 	tabBtns.forEach(function (e) {
-		e.addEventListener("pointerup", actTabSwitch);
+		e.addEventListener("pointerdown", actTabSwitch);
 	});
+	tabBtns[0].addEventListener("contextmenu", function () {
+		$(".tabline").style.display = "none";
+	});
+	tabBtns[1].addEventListener("contextmenu", function () {
+		tabs.all[1].style.display = "none";
+		tabs.all[5].style.display = "";
+	});
+	state.activeTabId = 0;
 	state.activeTab = tabNames[0];
 };
 
@@ -80,6 +108,7 @@ document.addEventListener("readystatechange", function () {
 			];
 			tabs.slider = $(".tab-slider");
 			tabs.core = $("#t-audio");
+			tabs.all = $$("iframe");
 			tabBtns = $$("#tabs-tabs div.tab-unit");
 			// Resize async
 			new Promise(function (p, r) {
