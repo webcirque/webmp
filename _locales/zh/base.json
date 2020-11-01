@@ -1,18 +1,22 @@
 {
     "appTitle": {
-        "message": "[${state}${targetName}] WebMP 白蘭",
+        "message": "[${state}${targetName}] WebMP 白兰",
         "description": "Default display title of the application."
     },
     "player": {
         "message": "播放器"
     },
     "open": {
-        "message": "打開目標"
+        "message": "打开目标"
     },
     "audioPanel": {
-        "message": "調聲面板"
+        "message": "混音板"
     },
     "conf": {
-        "message": "設定"
+        "message": "设置"
+    },
+    "library": {
+        "message": "媒体库",
+        "description": "Where users can access play queue, playlists, local and online media library."
     }
 }

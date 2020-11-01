@@ -48,7 +48,7 @@ Cordova App | - | ✕
 PS: _Running directly as an offline local webpage is no longer supported._
 
 ## Languages expected to support
-[![Translation status](https://be.pwcq.dev/widgets/webcirque-webmp/-/c-anad/multi-green.svg)](https://be.pwcq.dev/engage/webcirque-webmp/)
+[![Translation Status](http://be.pwcq.dev/widgets/webcirque-webmp/-/multi-green.svg)](http://be.pwcq.dev/engage/webcirque-webmp/)
 
 ## Project page
 
