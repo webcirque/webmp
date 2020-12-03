@@ -7,7 +7,9 @@ Webcirque Web Media Player for Web platforms. Licensed under MIT License.
 If you are not sure how to use this player, you can check the [manual](https://github.com/webcirque/webmp/wiki).
 
 ## Badges
-* ![image](https://www.gnu.org/graphics/agplv3-155x51.png)
+* ![image](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/License_icon-mit-2.svg/50px-License_icon-mit-2.svg.png)
+<!--[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)-->
+<!--![image](https://www.gnu.org/graphics/agplv3-155x51.png)-->
 <!--![jsdeals](https://github.com/webcirque/webmp/workflows/jsdeals/badge.svg)-->
 * [![Translation status](https://be.pwcq.dev/widgets/webcirque-webmp/-/c-anad/287x66-black.png)](https://be.pwcq.dev/engage/webcirque-webmp/)
 
