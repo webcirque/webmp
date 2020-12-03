@@ -1,1 +1,13 @@
-{}
+{
+    "extDesc": {
+        "message": "Eyinza okuba player ya buli lutimbe ekyasinze okukozesebwa buli wamu. Nga yakakasibwa ne layisensi ya AGPL v3 FOSS."
+    },
+    "extName": {
+        "message": "WebMP",
+        "description": "Name of this application."
+    },
+    "extFullName": {
+        "message": "Olutimbe oluzannya olwa Webcirque",
+        "description": "Full name of this application."
+    }
+}
