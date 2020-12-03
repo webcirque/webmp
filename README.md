@@ -1,6 +1,6 @@
 # webmp
 
-Webcirque Web Media Player for Web platforms. Licensed under GNU AGPL v3 License.
+Webcirque Web Media Player for Web platforms. Licensed under MIT License.
 
 **Warning**: This piece of software is still a work in progress (in beta), and lots of features are not guaranteed to work.
 
