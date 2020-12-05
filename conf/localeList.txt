@@ -1,9 +1,15 @@
+de
 en
 en_GB
 es
 fa
 fr
 ja
+lg
+ru
+sw
+th
 zh
-zh_CN
 zh_HK
+zh_SG
+zh_TW

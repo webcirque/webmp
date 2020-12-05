@@ -1,4 +1,4 @@
-#!~/bin/bash
+#!~/usr/bin/bash
 cd ../_locales
 mkdir zh
 mkdir zh_TW

@@ -1,0 +1,18 @@
+[
+	{
+		"family": "sans-serif",
+		"type": "woff2",
+		"name": "open-sans",
+		"variable": false,
+		"assets": {
+			"400": {
+				"r": "fonts/${n}/r.${t}",
+				"i": "fonts/${n}/ri.${t}"
+			},
+			"700": {
+				"r": "fonts/${n}/b.${t}",
+				"i": "fonts/${n}/bi.${t}"
+			}
+		}
+	}
+]

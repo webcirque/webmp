@@ -1,0 +1,17 @@
+./libs/aadsm/jschardet.min.js.bz2
+./libs/aadsm/jsmediatags.min.js.bz2
+./libs/cozmo/jsQR/jsQR.min.js.bz2
+./libs/DIF/dashjs/dash.all.min.js.bz2
+./libs/dsjs/qrcode.min.js.bz2
+./libs/GoogleChrome/omnitone/omnitone.min.js.bz2
+./libs/kagami/ffmpegjs/ffmpeg-worker-mp4.js.bz2
+./libs/kagami/ffmpegjs/ffmpeg-worker-webm.js.bz2
+./libs/kbumsik/opus-media-recorder/OggOpusEncoder.wasm.bz2
+./libs/kbumsik/opus-media-recorder/WebMOpusEncoder.wasm.bz2
+./libs/nazar-pc/m-a-p/meta-ap.js.bz2
+./libs/peerjs/peerjs.min.js.bz2
+./libs/tonejs/midi.min.js.bz2
+./libs/tonejs/Tone.js.bz2
+./libs/twitter/twemoji/twemoji.min.js.bz2
+./libs/video-dev/hls.js.bz2
+./libs/webtorrent/webtorrent.min.js.bz2
