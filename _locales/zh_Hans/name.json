@@ -1,1 +1,10 @@
-{}
+{
+    "local": {
+        "message": "简体中文（大陆）",
+        "description": "The local name of the specific language."
+    },
+    "english": {
+        "message": "Simplified Chinese (Mainland China)",
+        "description": "The English name of the specific language."
+    }
+}
