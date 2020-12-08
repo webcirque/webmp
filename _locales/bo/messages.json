@@ -1,1 +1,10 @@
-{}
+{
+    "local": {
+        "message": "正體中文（臺灣）",
+        "description": "The local name of the specific language."
+    },
+    "english": {
+        "message": "Orthodox Chinese (Taiwan)",
+        "description": "The English name of the specific language."
+    }
+}
