@@ -1,1 +1,10 @@
-{}
+{
+    "local": {
+        "message": "简体中文（湘东北）",
+        "description": "The local name of the specific language."
+    },
+    "english": {
+        "message": "Simplified Chinese (Northeastern Hsiang)",
+        "description": "The English name of the specific language."
+    }
+}
