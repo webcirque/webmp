@@ -1,1 +1,6 @@
-{}
+{
+    "english": {
+        "message": "Simplified Chinese (Singapore)",
+        "description": "The English name of the specific language."
+    }
+}

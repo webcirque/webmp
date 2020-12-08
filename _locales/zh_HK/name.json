@@ -1,1 +1,10 @@
-{}
+{
+	"local": {
+		"message": "繁體中文（香港）",
+		"description": "The local name of the specific language."
+	},
+	"english": {
+		"message": "Traditional Chinese (Hong Kong)",
+		"description": "The English name of the specific language."
+	}
+}
