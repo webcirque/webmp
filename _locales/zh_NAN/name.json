@@ -1,8 +1,12 @@
 {
     "local": {
-        "message": "繁體中文 - 闽南語"
+        "message": "繁體中文（闽南）"
     },
     "eng": {
         "message": "Traditional Chinese - Southern Min"
+    },
+    "english": {
+        "message": "Traditional Chinese (Southern Min)",
+        "description": "The English name of the specific language."
     }
 }
