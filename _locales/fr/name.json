@@ -1,1 +1,10 @@
-{}
+{
+    "local": {
+        "message": "Français (France)",
+        "description": "The local name of the specific language."
+    },
+    "english": {
+        "message": "French (France)",
+        "description": "The English name of the specific language."
+    }
+}
