@@ -1,0 +1,10 @@
+{
+    "local": {
+        "message": "English (United States)",
+        "description": "The local name of the specific language."
+    },
+    "english": {
+        "message": "English (United States)",
+        "description": "The English name of the specific language."
+    }
+}
