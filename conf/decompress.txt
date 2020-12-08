@@ -4,8 +4,6 @@
 ./libs/DIF/dashjs/dash.all.min.js.bz2
 ./libs/dsjs/qrcode.min.js.bz2
 ./libs/GoogleChrome/omnitone/omnitone.min.js.bz2
-./libs/kagami/ffmpegjs/ffmpeg-worker-mp4.js.bz2
-./libs/kagami/ffmpegjs/ffmpeg-worker-webm.js.bz2
 ./libs/kbumsik/opus-media-recorder/OggOpusEncoder.wasm.bz2
 ./libs/kbumsik/opus-media-recorder/WebMOpusEncoder.wasm.bz2
 ./libs/nazar-pc/m-a-p/meta-ap.js.bz2
