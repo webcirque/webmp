@@ -1,1 +1,13 @@
-{}
+{
+    "extName": {
+        "message": "WebMP",
+        "description": "Name of this application."
+    },
+    "extFullName": {
+        "message": "Webcirque Web 放片机",
+        "description": "Full name of this application."
+    },
+    "extDesc": {
+        "message": "这个可能是最好的不分平台的喔哩都可以用的放片机。这个是用AGPL v3许可的自由开源软件。"
+    }
+}
