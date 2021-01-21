@@ -7,16 +7,16 @@
         "message": "放片机"
     },
     "open": {
-        "message": "读目标"
+        "message": "读东西"
     },
     "audioPanel": {
-        "message": "调音板"
+        "message": "调声音"
     },
     "conf": {
         "message": "设置"
     },
     "library": {
-        "message": "片场",
+        "message": "存片馆",
         "description": "Where users can access play queue, playlists, local and online media library."
     }
 }
