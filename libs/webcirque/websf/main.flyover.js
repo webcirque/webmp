@@ -182,6 +182,60 @@ String.prototype.alter = function (map) {
 	return (wres);
 };
 
+// Contains?
+// 0 for not having any same elements, 1 for contain, 2 for same, -1 for reverse contain, -2 for intersect
+Array.prototype.quickRel = function (targetArray) {
+	var status = 1, pool = this, stash = targetArray;
+	if (pool.length < stash.length) {
+		pool = targetArray;
+		stash = this;
+		status = -1;
+	};
+	var sameCount = 0;
+	stash.forEach(function (e, i) {
+		sameCount += +!!(pool.indexOf(e) != -1);
+	});
+	if (sameCount == stash.length) {
+		if (stash.length == pool.length) {
+			status *= 2;
+		};
+	} else if (!sameCount) {
+		status = 0;
+	} else {
+		status = -2;
+	};
+	return status;
+};
+Object.prototype.toMap = function () {
+	return new Map(Object.entries(this));
+};
+Object.prototype.toRecursiveMap = function () {
+	throw Error("not implemented yet");
+};
+Map.prototype.quickRel = function (targetMap) {
+	var status = 1, pool = this, stash = targetMap;
+	if (pool.size < stash.size) {
+		pool = targetMap;
+		stash = this;
+		status = -1;
+	};
+	var sameCount = 0;
+	stash.forEach(function (e, i) {
+		sameCount += +(pool.get(i) == e);
+	});
+	if (sameCount == stash.size) {
+		if (stash.size == pool.size) {
+			status *= 2;
+		};
+	} else if (!sameCount) {
+		status = 0;
+	} else {
+		status = -2;
+	};
+	return status;
+};
+Map.prototype.toObject = Object.prototype.toRecursiveMap;
+
 // Try async style loading
 self.styleAsynd = self.styleAsynd || function (listOfScripts) {
 	var srcs = Array.from(arguments), promiseObj;
@@ -236,3 +290,19 @@ self.importAsynd = self.importAsynd || function (listOfScripts) {
 	return promiseObj;
 };
 importAsynd.imported = new Set();
+
+// Quick actions
+self["$"] = self["$"] || function (selector, source) {
+	var src = source || document;
+	return src.querySelector(selector);
+};
+self["$$"] = self["$$"] || function (selector, source) {
+	var src = source || document;
+	return Array.from(src.querySelectorAll(selector));
+};
+HTMLElement.prototype.$ = function (selector) {
+	return $(selector, this);
+};
+HTMLElement.prototype.$$ = function (selector) {
+	return $$(selector, this);
+};
