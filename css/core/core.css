@@ -1,18 +1,24 @@
 * {
 	color: #fff;
+	cursor: default;
+}
+
+::selection {
+	background: transparent;
 }
 
 #area-topbar {
-	height: 48px;
+	height: 32px;
 	background: rgba(0, 0, 0, 0.6);
 	opacity: 0.6;
 	display: flex;
 	flex-direction: row;
 }
 .area-top {
-	width: 68px;
+	width: 72px;
 	top: 50%;
 	transform: translateY(-50%);
+	text-align: center;
 }
 .area-left {
 	left: 0;
@@ -95,4 +101,9 @@
 	border: 0 solid #000;
 	border-radius: 50%;
 	box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
+}
+
+.tinyui-wcsms-textdial {
+	white-space: nowrap;
+	overflow: hidden;
 }

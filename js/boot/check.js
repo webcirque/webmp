@@ -51,7 +51,7 @@ var checkIt = function () {
 				top.postMessage({"type": "loadstage", "from": "check", "loadstage": "ok"}, "*");
 				setTimeout(function () {
 					location.href = "base.htm";
-				}, 15000);
+				}, 5000);
 				break;
 			};
 			default : {

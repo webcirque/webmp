@@ -90,6 +90,14 @@ try {
 	};
 } catch (err) {};
 
+// String actions
+String.prototype.random = function (length) {
+	var tmp = "";
+	for (var tick = 0; tick < length; tick ++) {
+		tmp += this[Math.floor(Math.random() * this.length)];
+	};
+	return tmp;
+};
 String.prototype.alter = function (map) {
 	let wtAr = Array.from(this);
 	let wlist = [];
@@ -206,12 +214,12 @@ Array.prototype.quickRel = function (targetArray) {
 	};
 	return status;
 };
-Object.prototype.toMap = function () {
+Object.defineProperty(Object.prototype, "toMap", {value: function () {
 	return new Map(Object.entries(this));
-};
-Object.prototype.toRecursiveMap = function () {
+}});
+Object.defineProperty(Object.prototype, "toRecursiveMap", {value: function () {
 	throw Error("not implemented yet");
-};
+}});
 Map.prototype.quickRel = function (targetMap) {
 	var status = 1, pool = this, stash = targetMap;
 	if (pool.size < stash.size) {
