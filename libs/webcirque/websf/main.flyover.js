@@ -300,17 +300,17 @@ self.importAsynd = self.importAsynd || function (listOfScripts) {
 importAsynd.imported = new Set();
 
 // Quick actions
-self["$"] = self["$"] || function (selector, source) {
+self["$e"] = self["$e"] || function (selector, source) {
 	var src = source || document;
 	return src.querySelector(selector);
 };
-self["$$"] = self["$$"] || function (selector, source) {
+self["$a"] = self["$a"] || function (selector, source) {
 	var src = source || document;
 	return Array.from(src.querySelectorAll(selector));
 };
-HTMLElement.prototype.$ = function (selector) {
+HTMLElement.prototype.$e = function (selector) {
 	return $(selector, this);
 };
-HTMLElement.prototype.$$ = function (selector) {
+HTMLElement.prototype.$a = function (selector) {
 	return $$(selector, this);
 };

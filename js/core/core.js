@@ -24,14 +24,10 @@ var uiResize = function (succeed) {
 
 document.addEventListener("readystatechange", function () {
 	if (this.readyState == "interactive") {
-		loadIcons("icons/all").then(function (iconMgr) {
-			iconMgr.updateIconsAll();
-			self.iconMgr = iconMgr;
-		});
 		// Initialize GUI
-		appUI.disp.mediaName = $("#text-media-name");
+		appUI.disp.mediaName = $e("#text-media-name");
 		// Initialize TinyUI
-		$$(".tui-textdial").forEach((e) => {
+		$a(".tui-textdial").forEach((e) => {
 			new WCSME.TextDialElement(e);
 		});
 		// Initialize direct handless
@@ -47,6 +43,10 @@ document.addEventListener("readystatechange", function () {
 		self.addEventListener("resize", uiResize);
 		uiResize();
 	} else if (this.readyState == "complete") {
+		loadIcons("icons/all").then(function (iconMgr) {
+			iconMgr.updateIconsAll();
+			self.iconMgr = iconMgr;
+		});
 		new Promise(uiResize);
 	};
 });

@@ -8,6 +8,11 @@ self.disableEvent = function (ev) {
 	return false;
 };
 
+self.getEvent = function (event) {
+	console.log([event.type, event]);
+};
+
+/*
 self["$"] = self["$"] || function (selector, source) {
 	var src = source || document;
 	return src.querySelector(selector);
@@ -22,3 +27,4 @@ HTMLElement.prototype.$ = function (selector) {
 HTMLElement.prototype.$$ = function (selector) {
 	return $$(selector, this);
 };
+*/

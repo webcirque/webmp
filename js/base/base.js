@@ -4,6 +4,9 @@
 var bgContainer, bgImgEl, iconMgr, tabs = {}, tabBtns, tabFrames, state = {}, config = {};
 var tabNames = ["core", "audio", "lib", "open", "conf"];
 
+// Temporary background filler
+var bgImgUrl = "../img/bg/02.webp"
+
 // Load languages
 var i18nHandler = new LocaleHandler();
 i18nHandler.load("../conf/localeMap.json").then(function () {
@@ -53,7 +56,7 @@ var regTabSwitch = function () {
 		e.addEventListener("pointerdown", actTabSwitch);
 	});
 	tabBtns[0].addEventListener("contextmenu", function () {
-		$(".tabline").style.display = "none";
+		$e(".tabline").style.display = "none";
 	});
 	tabBtns[1].addEventListener("contextmenu", function () {
 		tabs.all[1].style.display = "none";
@@ -64,29 +67,17 @@ var regTabSwitch = function () {
 };
 
 // Image resizer
-var bgResize = function () {
-	let cWidth = bgContainer.clientWidth;
-	let cHeight = bgContainer.clientHeight;
-	let cRatio = cWidth / cHeight;
+var bgResize = function (proceed) {
 	bgImgEl.forEach(function (e) {
-		let nWidth = e.naturalWidth;
-		let nHeight = e.naturalHeight;
-		let nRatio = nWidth / nHeight;
-		// Clean up previous size
-		e.style.width = "";
-		e.style.height = "";
-		if (!(nWidth * nHeight > 0)) {
-			//console.warn("Failed resizing element: %o", e);
-		} else if (nRatio > cRatio) {
-			e.style.width = (cHeight * nRatio).toString() + "px";
-		} else if (nRatio < cRatio) {
-			e.style.height = (cWidth / nRatio).toString() + "px";
-		};
+		e.resize("", "");
+		e.fit("fill");
 	});
-}
+	(proceed || (function () {}))();
+};
 // Element resizer
-var eleResize = function () {
+var eleResize = function (proceed) {
 	bgResize();
+	(proceed || (function () {}))();
 };
 
 // Resizing?
@@ -101,24 +92,19 @@ document.addEventListener("readystatechange", function () {
 		};
 		case "interactive": {
 			// Get the elements
-			bgContainer = $(".background");
+			bgContainer = $e(".background");
 			bgImgEl = [
-				$("#bg-main"),
-				$("#bg-tween")
+				$e("#bg-main"),
+				$e("#bg-tween")
 			];
-			tabs.slider = $(".tab-slider");
-			tabs.core = $("#t-audio");
-			tabs.all = $$("iframe");
-			tabBtns = $$("#tabs-tabs div.tab-unit");
+			tabs.slider = $e(".tab-slider");
+			tabs.core = $e("#t-audio");
+			tabs.all = $a("iframe");
+			tabBtns = $a("#tabs-tabs div.tab-unit");
 			// Resize async
 			new Promise(function (p, r) {
 				eleResize();
 				p();
-			});
-			// Load icons
-			loadIcons("icons/all").then(function (iconMgr) {
-				iconMgr.updateIconsAll();
-				self.iconMgr = iconMgr;
 			});
 			// Load override stylesheet for extensions
 			if (self.location.protocol == "chrome-extension:") {
@@ -133,7 +119,7 @@ document.addEventListener("readystatechange", function () {
 			// Post Success
 			self.top.postMessage({"type": "loadProgress", "value": "base"});
 			// All images not draggable
-			$$("img").forEach(function (e) {
+			$a("img").forEach(function (e) {
 				e.ondrag = disableEvent;
 				e.ondragstart = disableEvent;
 				e.ondragend = disableEvent;
@@ -145,6 +131,16 @@ document.addEventListener("readystatechange", function () {
 			break;
 		};
 		case "complete": {
+			// Load icons
+			loadIcons("icons/all").then(function (iconMgr) {
+				iconMgr.updateIconsAll();
+				self.iconMgr = iconMgr;
+			});
+			bgImgEl[0].src = bgImgUrl;
+			bgImgEl[0].addEventListener("loadstart", function () {
+				new Promise(bgResize);
+			});
+			bgImgEl[0].decode().then(bgResize);
 			// Resize the elements
 			eleResize();
 			break;
